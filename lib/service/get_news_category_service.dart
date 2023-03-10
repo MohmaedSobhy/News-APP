@@ -7,7 +7,7 @@ import 'package:news_app/model/article_model.dart';
 class GetNewsCategory {
   Future<List<ArticleModel>> getNewsCategory({required String category}) async {
     String URL =
-        "https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=1ad704bc419e4be5909e5fc3495a393a";
+        "https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=AddYourAPIKey";
     List<ArticleModel> articles = [];
     http.Response response = await API().getMethod(url: URL);
     dynamic data = jsonDecode(response.body);
