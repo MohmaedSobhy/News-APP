@@ -5,7 +5,7 @@ import 'package:news_app/model/article_model.dart';
 
 class GetNewsService {
   String URL =
-      "https://newsapi.org/v2/top-headlines?country=us&apiKey=1ad704bc419e4be5909e5fc3495a393a";
+      "https://newsapi.org/v2/top-headlines?country=us&apiKey=AddYourAPIKey";
   Future<List<ArticleModel>> getAllNews() async {
     List<ArticleModel> articles = [];
     http.Response response = await API().getMethod(url: URL);
