@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app/constanstent.dart';
-import 'package:news_app/cubit/news_cubite.dart';
-import 'package:news_app/cubit/news_status.dart';
-import 'package:news_app/model/category_model.dart';
-import 'package:news_app/pages/article_page.dart';
-import 'package:news_app/views/category_card.dart';
-import 'package:news_app/views/news_card.dart';
+import 'package:news_app/ui/views/no_items_view.dart';
+import 'package:news_app/utils/constanstent.dart';
+import 'package:news_app/core/cubit/news_cubite.dart';
+import 'package:news_app/core/cubit/news_status.dart';
+import 'package:news_app/core/model/category_model.dart';
+import 'package:news_app/ui/pages/article_page.dart';
+import 'package:news_app/ui/views/category_card.dart';
+import 'package:news_app/ui/views/news_card.dart';
 import 'package:sizer/sizer.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
+  const HomeScreen({super.key});
   @override
   Widget build(BuildContext context) {
     var newsCubit = NewCubit.get(context);
@@ -48,33 +49,36 @@ class HomeScreen extends StatelessWidget {
                     (index) => CategoryCard(
                       categoryModel: CategoryModel.getDummyData()[index],
                       function: () {
-                        newsCubit.GetAllNewUsingCategory(
+                        newsCubit.getAllNewUsingCategory(
                             category: CategoryModel.getDummyData()[index].txt);
                       },
                     ),
                   ),
                 ),
               ),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: newsCubit.articles.length,
-                  itemBuilder: (context, index) {
-                    return NewsCard(
-                      articleModel: newsCubit.articles[index],
-                      function: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return ArticlePage(
-                                  hello: newsCubit.articles[index].articleUrl);
+              (newsCubit.articles.isEmpty || state is FailedToGetNews)
+                  ? const Center(child: CircularProgressIndicator(),)
+                  : Expanded(
+                      child: ListView.builder(
+                        itemCount: newsCubit.articles.length,
+                        itemBuilder: (context, index) {
+                          return NewsCard(
+                            articleModel: newsCubit.articles[index],
+                            function: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return ArticlePage(
+                                        hello: newsCubit
+                                            .articles[index].articleUrl);
+                                  },
+                                ),
+                              );
                             },
-                          ),
-                        );
-                      },
-                    );
-                  },
-                ),
-              ),
+                          );
+                        },
+                      ),
+                    ),
             ],
           ),
         );

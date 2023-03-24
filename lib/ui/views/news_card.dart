@@ -1,9 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:news_app/model/article_model.dart';
+import 'package:news_app/core/model/article_model.dart';
 
 import 'package:sizer/sizer.dart';
 
+// ignore: must_be_immutable
 class NewsCard extends StatelessWidget {
   final ArticleModel articleModel;
   VoidCallback function;
@@ -34,10 +35,10 @@ class NewsCard extends StatelessWidget {
                       );
                     },
                     placeholder: (context, url) {
-                      return Center(child: CircularProgressIndicator());
+                      return const Center(child: CircularProgressIndicator());
                     },
                     errorWidget: (context, url, error) =>
-                        Center(child: const CircularProgressIndicator())),
+                        const Center(child: CircularProgressIndicator())),
               ),
               Positioned(
                 child: Container(

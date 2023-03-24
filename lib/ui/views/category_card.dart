@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/model/category_model.dart';
+import 'package:news_app/core/model/category_model.dart';
 import 'package:sizer/sizer.dart';
 
 // ignore: must_be_immutable
