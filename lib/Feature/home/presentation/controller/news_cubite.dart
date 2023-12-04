@@ -1,11 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/Feature/home/presentation/controller/news_status.dart';
-import 'package:news_app/Feature/home/data/model/article_model.dart';
+import 'package:news_app/Feature/home/data/model/news_model.dart';
 import 'package:news_app/core/service/get_news_by_category_service.dart';
 import 'package:news_app/core/service/get_news_service.dart';
 
 class NewCubit extends Cubit<NewsState> {
-  List<ArticleModel> articles = [];
+  List<NewModel> articles = [];
   NewCubit() : super(InitialState());
 
   static NewCubit get(context) {

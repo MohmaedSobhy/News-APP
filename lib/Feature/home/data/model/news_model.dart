@@ -1,4 +1,4 @@
-class ArticleModel {
+class NewModel {
   String title;
   String author;
   String description;
@@ -6,7 +6,7 @@ class ArticleModel {
   DateTime publshedAt;
   String content;
   String articleUrl;
-  ArticleModel(
+  NewModel(
       {required this.articleUrl,
       required this.title,
       required this.description,
@@ -15,8 +15,8 @@ class ArticleModel {
       required this.author,
       required this.urlToImage});
 
-  factory ArticleModel.formJson(dynamic element) {
-    return ArticleModel(
+  factory NewModel.formJson(dynamic element) {
+    return NewModel(
         author: element['author'],
         description: element['description'],
         urlToImage: element['urlToImage'],
