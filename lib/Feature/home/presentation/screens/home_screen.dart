@@ -9,6 +9,9 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const CustomeTitleAppBarView(),
+        actions: [
+          IconButton(onPressed: () {}, icon: const Icon(Icons.light_mode))
+        ],
       ),
       body: const HomeViewBody(),
     );

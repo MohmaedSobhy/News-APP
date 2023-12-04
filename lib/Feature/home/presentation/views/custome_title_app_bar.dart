@@ -10,7 +10,7 @@ class CustomeTitleAppBarView extends StatelessWidget {
       "BreakingNews",
       style: TextStyle(
         color: Colors.black,
-        fontSize: 15.sp,
+        fontSize: 16.sp,
         fontWeight: FontWeight.w600,
       ),
     );
