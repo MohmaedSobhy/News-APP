@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:news_app/core/helper/api.dart';
-import 'package:news_app/core/model/article_model.dart';
-import 'package:news_app/utils/constanstent.dart';
+import 'package:news_app/Feature/home/data/model/article_model.dart';
+import 'package:news_app/core/utils/constanstent.dart';
 
 class GetNewsService {
   String url =

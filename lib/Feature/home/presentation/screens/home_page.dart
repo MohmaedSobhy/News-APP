@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app/ui/views/no_items_view.dart';
-import 'package:news_app/utils/constanstent.dart';
-import 'package:news_app/core/cubit/news_cubite.dart';
-import 'package:news_app/core/cubit/news_status.dart';
-import 'package:news_app/core/model/category_model.dart';
-import 'package:news_app/ui/pages/article_page.dart';
+import 'package:news_app/core/utils/constanstent.dart';
+import 'package:news_app/Feature/home/presentation/controller/news_cubite.dart';
+import 'package:news_app/Feature/home/presentation/controller/news_status.dart';
+import 'package:news_app/Feature/home/data/model/category_model.dart';
+import 'package:news_app/Feature/home/presentation/screens/article_page.dart';
 import 'package:news_app/ui/views/category_card.dart';
 import 'package:news_app/ui/views/news_card.dart';
 import 'package:sizer/sizer.dart';
@@ -57,7 +56,9 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               (newsCubit.articles.isEmpty || state is FailedToGetNews)
-                  ? const Center(child: CircularProgressIndicator(),)
+                  ? const Center(
+                      child: CircularProgressIndicator(),
+                    )
                   : Expanded(
                       child: ListView.builder(
                         itemCount: newsCubit.articles.length,
