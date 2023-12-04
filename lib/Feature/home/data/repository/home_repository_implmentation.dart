@@ -13,12 +13,12 @@ class HomeRepositoryImplmentation implements HomeRepository {
   }
 
   @override
-  Future<Either<Failure, NewModel>> fetchAllNewes() {
+  Future<Either<Failure, NewsModel>> fetchAllNewes() {
     throw UnimplementedError();
   }
 
   @override
-  Future<Either<Failure, NewModel>> fetchAllNewesByCategory(
+  Future<Either<Failure, NewsModel>> fetchAllNewesByCategory(
       {required String category}) {
     throw UnimplementedError();
   }

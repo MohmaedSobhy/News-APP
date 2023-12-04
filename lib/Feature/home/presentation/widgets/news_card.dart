@@ -6,7 +6,7 @@ import 'package:sizer/sizer.dart';
 
 // ignore: must_be_immutable
 class NewsCard extends StatelessWidget {
-  final NewModel articleModel;
+  final NewsModel articleModel;
   VoidCallback function;
   NewsCard({super.key, required this.articleModel, required this.function});
 

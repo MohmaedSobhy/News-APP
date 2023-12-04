@@ -5,7 +5,7 @@ import 'package:news_app/core/service/get_news_by_category_service.dart';
 import 'package:news_app/core/service/get_news_service.dart';
 
 class NewCubit extends Cubit<NewsState> {
-  List<NewModel> articles = [];
+  List<NewsModel> articles = [];
   NewCubit() : super(InitialState());
 
   static NewCubit get(context) {

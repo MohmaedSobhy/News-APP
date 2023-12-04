@@ -7,14 +7,14 @@ import 'package:news_app/core/utils/constanstent.dart';
 class GetNewsService {
   String url =
       "https://newsapi.org/v2/top-headlines?country=us&apiKey=${ConstantString.apiKey}";
-  Future<List<NewModel>> getAllNews() async {
-    List<NewModel> articles = [];
+  Future<List<NewsModel>> getAllNews() async {
+    List<NewsModel> articles = [];
     http.Response response = await API().getMethod(url: url);
     dynamic data = jsonDecode(response.body);
     dynamic items = data['articles'];
     for (var item in items) {
       if (API().checkData(item)) {
-        articles.add(NewModel.formJson(item));
+        articles.add(NewsModel.formJson(item));
       }
     }
     return articles;
