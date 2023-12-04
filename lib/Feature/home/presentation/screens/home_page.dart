@@ -5,8 +5,8 @@ import 'package:news_app/Feature/home/presentation/controller/news_cubite.dart';
 import 'package:news_app/Feature/home/presentation/controller/news_status.dart';
 import 'package:news_app/Feature/home/data/model/category_model.dart';
 import 'package:news_app/Feature/home/presentation/screens/article_page.dart';
-import 'package:news_app/ui/views/category_card.dart';
-import 'package:news_app/ui/views/news_card.dart';
+import 'package:news_app/Feature/home/presentation/widgets/category_card.dart';
+import 'package:news_app/Feature/home/presentation/widgets/news_card.dart';
 import 'package:sizer/sizer.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -55,7 +55,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              (newsCubit.articles.isEmpty || state is FailedToGetNews)
+              (newsCubit.articles.isEmpty || state is FetchNewsFailed)
                   ? const Center(
                       child: CircularProgressIndicator(),
                     )

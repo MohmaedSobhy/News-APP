@@ -2,10 +2,10 @@ abstract class NewsState {}
 
 class InitialState extends NewsState {}
 
-class InitialLoading extends NewsState {}
+class FetchNewsLoading extends NewsState {}
 
-class LoadNewsSuccessfull extends NewsState {}
+class FetchNewsSucess extends NewsState {}
 
-class FailedToGetNews extends NewsState {}
+class FetchNewsFailed extends NewsState {}
 
 class NewsUsingCategory extends NewsState {}

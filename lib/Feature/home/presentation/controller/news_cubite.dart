@@ -20,7 +20,7 @@ class NewCubit extends Cubit<NewsState> {
     }
     articles = await GetNewsCategory().getNewsCategory(category: category);
     if (articles.isEmpty) {
-      emit(FailedToGetNews());
+      emit(FetchNewsFailed());
       return;
     }
     emit(NewsUsingCategory());
@@ -30,9 +30,9 @@ class NewCubit extends Cubit<NewsState> {
     articles.clear();
     articles = await GetNewsService().getAllNews();
     if (articles.isEmpty) {
-      emit(FailedToGetNews());
+      emit(FetchNewsFailed());
       return;
     }
-    emit(LoadNewsSuccessfull());
+    emit(FetchNewsSucess());
   }
 }
