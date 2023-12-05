@@ -4,21 +4,21 @@ import 'package:news_app/Feature/home/data/repository/home_repository.dart';
 import 'package:news_app/core/errors/fauiler_class.dart';
 
 class HomeRepositoryImplmentation implements HomeRepository {
-  HomeRepositoryImplmentation? homeImplementation;
+  static HomeRepositoryImplmentation? homeImplementation;
   HomeRepositoryImplmentation._privateConstructor();
 
-  HomeRepositoryImplmentation getInstanse() {
+  static HomeRepositoryImplmentation getInstanse() {
     homeImplementation ??= HomeRepositoryImplmentation._privateConstructor();
     return homeImplementation!;
   }
 
   @override
-  Future<Either<Failure, NewsModel>> fetchAllNewes() {
+  Future<Either<Failure, List<NewsModel>>> fetchAllNewes() {
     throw UnimplementedError();
   }
 
   @override
-  Future<Either<Failure, NewsModel>> fetchAllNewesByCategory(
+  Future<Either<Failure, List<NewsModel>>> fetchAllNewesByCategory(
       {required String category}) {
     throw UnimplementedError();
   }

@@ -3,7 +3,7 @@ import 'package:news_app/Feature/home/data/model/news_model.dart';
 import 'package:news_app/core/errors/fauiler_class.dart';
 
 abstract class HomeRepository {
-  Future<Either<Failure, NewsModel>> fetchAllNewes();
-  Future<Either<Failure, NewsModel>> fetchAllNewesByCategory(
+  Future<Either<Failure, List<NewsModel>>> fetchAllNewes();
+  Future<Either<Failure, List<NewsModel>>> fetchAllNewesByCategory(
       {required String category});
 }

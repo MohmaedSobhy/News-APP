@@ -1,7 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app/Feature/home/presentation/controller/news_status.dart';
+import 'package:news_app/Feature/home/presentation/controller/populer_news_cubit/populer_news_status.dart';
 import 'package:news_app/Feature/home/data/model/news_model.dart';
-import 'package:news_app/core/service/get_news_by_category_service.dart';
 import 'package:news_app/core/service/get_news_service.dart';
 
 class NewCubit extends Cubit<NewsState> {
@@ -10,20 +9,6 @@ class NewCubit extends Cubit<NewsState> {
 
   static NewCubit get(context) {
     return BlocProvider.of(context);
-  }
-
-  void getAllNewUsingCategory({required String category}) async {
-    articles.clear();
-    if (category == "General") {
-      getAllNews();
-      return;
-    }
-    articles = await GetNewsCategory().getNewsCategory(category: category);
-    if (articles.isEmpty) {
-      emit(FetchNewsFailed());
-      return;
-    }
-    emit(NewsUsingCategory());
   }
 
   void getAllNews() async {
