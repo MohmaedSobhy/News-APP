@@ -1,6 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/Feature/home/data/model/category_model.dart';
-import 'package:sizer/sizer.dart';
 
 // ignore: must_be_immutable
 class CategoryCard extends StatelessWidget {
@@ -18,25 +18,20 @@ class CategoryCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
             child: SizedBox(
               width: MediaQuery.sizeOf(context).width,
-              child: Image(
-                image: NetworkImage(categoryModel.imageUrl),
+              child: CachedNetworkImage(
+                imageUrl: categoryModel.imageUrl,
+                errorWidget: (context, url, error) {
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                },
+                placeholder: (context, url) {
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                },
                 fit: BoxFit.cover,
               ),
-            ),
-          ),
-          Container(
-            width: MediaQuery.sizeOf(context).width,
-            decoration: BoxDecoration(
-              color: Colors.black.withOpacity(0.2),
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
-          Text(
-            categoryModel.categoryName,
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w900,
-              fontSize: 15.sp,
             ),
           ),
         ],

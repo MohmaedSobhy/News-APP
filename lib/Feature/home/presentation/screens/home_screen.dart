@@ -8,11 +8,17 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
+      drawer: const Drawer(
         child: DrawerView(),
       ),
       appBar: AppBar(
         title: const CustomeTitleAppBarView(),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.light_mode),
+          )
+        ],
       ),
       body: const HomeViewBody(),
     );

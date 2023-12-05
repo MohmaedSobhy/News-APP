@@ -10,6 +10,7 @@ class NewsListView extends StatelessWidget {
     var newsCubit = NewCubit.get(context);
     return Expanded(
       child: ListView.builder(
+        physics: const NeverScrollableScrollPhysics(),
         itemCount: newsCubit.articles.length,
         itemBuilder: (context, index) {
           return CustomeNewsItem(
