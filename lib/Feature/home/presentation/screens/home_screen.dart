@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/Feature/home/presentation/views/drawer_view.dart';
+import 'package:news_app/core/localization/app_string.dart';
 import '../views/custome_title_app_bar.dart';
 import '../views/home_view_body.dart';
 
@@ -12,7 +13,9 @@ class HomeScreen extends StatelessWidget {
         child: DrawerView(),
       ),
       appBar: AppBar(
-        title: const CustomeTitleAppBarView(),
+        title: CustomeTitleAppBarView(
+          title: AppString.appName,
+        ),
         actions: [
           IconButton(
             onPressed: () {},
