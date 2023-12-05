@@ -9,9 +9,10 @@ class CustomeNewsItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(
-        8,
-      )),
+        borderRadius: BorderRadius.circular(
+          8,
+        ),
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [

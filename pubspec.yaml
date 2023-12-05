@@ -14,6 +14,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: null
+  google_fonts: ^6.1.0
   http: null
   sizer: null
   webview_flutter: null
