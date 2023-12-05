@@ -5,41 +5,41 @@ import 'package:sizer/sizer.dart';
 // ignore: must_be_immutable
 class CategoryCard extends StatelessWidget {
   CategoryModel categoryModel;
-  VoidCallback function;
-  CategoryCard(
-      {super.key, required this.categoryModel, required this.function});
+
+  CategoryCard({super.key, required this.categoryModel});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8),
-      child: InkWell(
-        onTap: function,
-        child: Stack(
-          alignment: AlignmentDirectional.center,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(5),
+    return SizedBox(
+      child: Stack(
+        alignment: AlignmentDirectional.center,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: SizedBox(
+              width: MediaQuery.sizeOf(context).width,
               child: Image(
-                  width: 40.w,
-                  height: 10.h,
-                  image: NetworkImage(categoryModel.imageUrl),
-                  fit: BoxFit.cover),
+                image: NetworkImage(categoryModel.imageUrl),
+                fit: BoxFit.cover,
+              ),
             ),
-            Container(
-              width: 40.w,
-              height: 10.h,
-              color: Colors.black.withOpacity(0.1),
+          ),
+          Container(
+            width: MediaQuery.sizeOf(context).width,
+            decoration: BoxDecoration(
+              color: Colors.black.withOpacity(0.2),
+              borderRadius: BorderRadius.circular(12),
             ),
-            Text(
-              categoryModel.txt,
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w900,
-                  fontSize: 15.sp),
+          ),
+          Text(
+            categoryModel.categoryName,
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.w900,
+              fontSize: 15.sp,
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
