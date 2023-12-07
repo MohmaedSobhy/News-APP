@@ -7,6 +7,7 @@ abstract class AppTheme {
     textTheme: GoogleFonts.poppinsTextTheme().copyWith(
       displayLarge: GoogleFonts.abrilFatface().copyWith(
         color: Colors.black,
+        fontSize: 20,
       ),
     ),
     appBarTheme: const AppBarTheme(
@@ -18,6 +19,7 @@ abstract class AppTheme {
       ),
     ),
   );
+
   static ThemeData dartTheme = ThemeData(
     scaffoldBackgroundColor: Colors.black,
     drawerTheme: const DrawerThemeData(

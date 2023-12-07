@@ -1,24 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/Feature/home/presentation/screens/home_screen.dart';
 import 'package:news_app/core/theme/app_theme.dart';
 import 'package:sizer/sizer.dart';
 
 import 'Feature/home/presentation/controller/populer_news_cubit/populer_news_cubit.dart';
+import 'core/theme/cubit/app_theme_cubit.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => NewCubit()..getAllNews(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => NewCubit()..getAllNews(),
+        ),
+        BlocProvider(
+          create: (context) => AppThemeCubit(),
+        ),
+      ],
       child: Sizer(builder: (context, orientation, deviceType) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          home: const HomeScreen(),
-          theme: AppTheme.dartTheme,
+        return BlocBuilder<AppThemeCubit, AppThemeState>(
+          builder: (context, state) {
+            return MaterialApp(
+              debugShowCheckedModeBanner: false,
+              home: const HomeScreen(),
+              theme: AppThemeCubit.get(context).isLight
+                  ? AppTheme.ligthTheme
+                  : AppTheme.dartTheme,
+            );
+          },
         );
       }),
     );

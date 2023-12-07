@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/Feature/home/presentation/views/drawer_view.dart';
 import 'package:news_app/core/localization/app_string.dart';
+import 'package:news_app/core/theme/cubit/app_theme_cubit.dart';
 import '../views/custome_title_app_bar.dart';
 import '../views/home_view_body.dart';
 
@@ -18,7 +19,9 @@ class HomeScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () async {},
+            onPressed: () {
+              AppThemeCubit.get(context).changeTheme();
+            },
             icon: const Icon(Icons.light_mode),
           )
         ],
