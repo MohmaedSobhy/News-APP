@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app/Feature/home/presentation/screens/home_screen.dart';
+import 'package:news_app/core/routes/app_router.dart';
 import 'package:news_app/core/theme/app_theme.dart';
 import 'package:sizer/sizer.dart';
 
@@ -24,9 +24,9 @@ class MyApp extends StatelessWidget {
       child: Sizer(builder: (context, orientation, deviceType) {
         return BlocBuilder<AppThemeCubit, AppThemeState>(
           builder: (context, state) {
-            return MaterialApp(
+            return MaterialApp.router(
+              routerConfig: AppRouter.router,
               debugShowCheckedModeBanner: false,
-              home: const HomeScreen(),
               theme: AppThemeCubit.get(context).isLight
                   ? AppTheme.ligthTheme
                   : AppTheme.dartTheme,

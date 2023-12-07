@@ -22,7 +22,7 @@ abstract class AppRouter {
           return BlocProvider(
             create: (context) => NewsByCategoryCubit(),
             child: CategoryScreen(
-              category: 'health',
+              category: state.error as String,
             ),
           );
         },
