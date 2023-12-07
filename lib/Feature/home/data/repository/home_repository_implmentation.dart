@@ -5,6 +5,7 @@ import 'package:news_app/Feature/home/data/repository/home_repository.dart';
 import 'package:news_app/core/API/api_servies.dart';
 import 'package:news_app/core/API/end_pointes.dart';
 import 'package:news_app/core/errors/fauiler_class.dart';
+import 'package:news_app/core/helper/check_article_data.dart';
 
 class HomeRepositoryImplmentation implements HomeRepository {
   static HomeRepositoryImplmentation? homeImplementation;
@@ -21,9 +22,13 @@ class HomeRepositoryImplmentation implements HomeRepository {
       List<NewsModel> news = [];
       var response = await ApiServices.getData(url: ApiEndPointes.allNews);
       var data = response.data;
+
       for (var item in data['articles']) {
-        news.add(NewsModel.formJson(item));
+        if (checkNewsData(item)) {
+          news.add(NewsModel.formJson(item));
+        }
       }
+
       return Right(news);
     } catch (error) {
       if (error is DioException) {
@@ -42,8 +47,11 @@ class HomeRepositoryImplmentation implements HomeRepository {
           url: "${ApiEndPointes.allNewsByCategory}$category");
       var data = response.data;
       for (var item in data['articles']) {
-        news.add(NewsModel.formJson(item));
+        if (checkNewsData(item)) {
+          news.add(NewsModel.formJson(item));
+        }
       }
+      print(news.length);
       return Right(news);
     } catch (error) {
       if (error is DioException) {

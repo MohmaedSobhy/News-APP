@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () async {},
             icon: const Icon(Icons.light_mode),
           )
         ],

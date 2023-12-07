@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/Feature/home/presentation/screens/home_screen.dart';
 import 'package:sizer/sizer.dart';
 
-import 'Feature/home/presentation/controller/news_cubite.dart';
+import 'Feature/home/presentation/controller/populer_news_cubit/populer_news_cubit.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

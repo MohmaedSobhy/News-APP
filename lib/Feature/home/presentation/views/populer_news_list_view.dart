@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/Feature/home/presentation/widgets/populer_news_item.dart';
-import '../controller/news_cubite.dart';
+import '../controller/populer_news_cubit/populer_news_cubit.dart';
 
 class NewsListView extends StatelessWidget {
   const NewsListView({super.key});
