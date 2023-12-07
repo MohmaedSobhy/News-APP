@@ -51,7 +51,6 @@ class HomeRepositoryImplmentation implements HomeRepository {
           news.add(NewsModel.formJson(item));
         }
       }
-
       return Right(news);
     } catch (error) {
       if (error is DioException) {
