@@ -10,21 +10,15 @@ class PopulerNewView extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.sizeOf(context).width * 0.02),
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "Populer News",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 18,
-              fontWeight: FontWeight.w800,
-            ),
-          ),
-          SizedBox(
+          Text("Populer News",
+              style: Theme.of(context).textTheme.displayMedium),
+          const SizedBox(
             height: 10,
           ),
-          NewsListView(),
+          const NewsListView(),
         ],
       ),
     );

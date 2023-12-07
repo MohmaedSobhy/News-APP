@@ -9,6 +9,11 @@ abstract class AppTheme {
         color: Colors.black,
         fontSize: 20,
       ),
+      displayMedium: const TextStyle(
+        color: Colors.black,
+        fontSize: 18,
+        fontWeight: FontWeight.w800,
+      ),
     ),
     appBarTheme: const AppBarTheme(
       elevation: 0.0,
@@ -29,6 +34,11 @@ abstract class AppTheme {
       displayLarge: GoogleFonts.abrilFatface().copyWith(
         color: Colors.white,
         fontSize: 20,
+      ),
+      displayMedium: const TextStyle(
+        color: Colors.white,
+        fontSize: 18,
+        fontWeight: FontWeight.w800,
       ),
     ),
     appBarTheme: const AppBarTheme(

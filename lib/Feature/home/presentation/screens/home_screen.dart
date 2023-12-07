@@ -9,7 +9,6 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    print('hello');
     return Scaffold(
       drawer: const Drawer(
         child: DrawerView(),
@@ -18,7 +17,7 @@ class HomeScreen extends StatelessWidget {
         title: CustomeTitleAppBarView(
           title: AppString.appName,
         ),
-        actions: [
+        actions: const [
           IconThemeButton(),
         ],
       ),
