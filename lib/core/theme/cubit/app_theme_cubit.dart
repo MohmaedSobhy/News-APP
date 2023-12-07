@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 
@@ -8,6 +9,7 @@ class AppThemeCubit extends Cubit<AppThemeState> {
   AppThemeCubit() : super(ThemeAppInitial());
 
   bool isLight = true;
+  IconData icon = Icons.light_mode;
 
   static AppThemeCubit get(context) {
     return BlocProvider.of(context);
@@ -15,6 +17,11 @@ class AppThemeCubit extends Cubit<AppThemeState> {
 
   void changeTheme() {
     isLight = !isLight;
+    if (isLight) {
+      icon = Icons.light_mode;
+    } else {
+      icon = Icons.dark_mode;
+    }
     emit(ChangeAppTheme());
   }
 }
