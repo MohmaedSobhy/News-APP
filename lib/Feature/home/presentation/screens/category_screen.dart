@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/Feature/home/presentation/views/custome_title_app_bar.dart';
 
-class CategoryScreen extends StatelessWidget {
+class CategoryScreen extends StatefulWidget {
   final String category;
   const CategoryScreen({super.key, required this.category});
 
+  @override
+  State<CategoryScreen> createState() => _CategoryScreenState();
+}
+
+class _CategoryScreenState extends State<CategoryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +23,7 @@ class CategoryScreen extends StatelessWidget {
           ),
         ),
         title: CustomeTitleAppBarView(
-          title: category,
+          title: widget.category,
         ),
       ),
     );
