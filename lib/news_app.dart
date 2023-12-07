@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/Feature/home/presentation/screens/home_screen.dart';
+import 'package:news_app/core/theme/app_theme.dart';
 import 'package:sizer/sizer.dart';
 
 import 'Feature/home/presentation/controller/populer_news_cubit/populer_news_cubit.dart';
@@ -17,20 +18,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           home: const HomeScreen(),
-          theme: ThemeData(
-            scaffoldBackgroundColor: Colors.white,
-            textTheme: GoogleFonts.poppinsTextTheme().copyWith(
-              displayLarge: GoogleFonts.abrilFatface(),
-            ),
-            appBarTheme: const AppBarTheme(
-              elevation: 0.0,
-              backgroundColor: Colors.white,
-              centerTitle: true,
-              iconTheme: IconThemeData(
-                color: Colors.black,
-              ),
-            ),
-          ),
+          theme: AppTheme.dartTheme,
         );
       }),
     );

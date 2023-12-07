@@ -16,10 +16,7 @@ class DrawerView extends StatelessWidget {
         ListTile(
           title: Text(
             AppString.appName,
-            style: GoogleFonts.abrilFatface().copyWith(
-              fontSize: 20.sp,
-              color: Colors.black,
-            ),
+            style: Theme.of(context).textTheme.displayLarge,
           ),
         ),
         SizedBox(

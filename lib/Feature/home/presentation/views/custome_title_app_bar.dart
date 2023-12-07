@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:sizer/sizer.dart';
 
 class CustomeTitleAppBarView extends StatelessWidget {
   final String title;
@@ -10,10 +8,7 @@ class CustomeTitleAppBarView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       title,
-      style: GoogleFonts.abrilFatface().copyWith(
-        fontSize: 18.sp,
-        color: Colors.black,
-      ),
+      style: Theme.of(context).textTheme.displayLarge,
     );
   }
 }
