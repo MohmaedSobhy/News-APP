@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/Feature/home/data/model/news_model.dart';
 import 'package:news_app/Feature/home/presentation/widgets/populer_news_item.dart';
-import '../controller/populer_news_cubit/populer_news_cubit.dart';
 
-class NewsListView extends StatelessWidget {
-  const NewsListView({super.key});
+class PopulerNewsListView extends StatelessWidget {
+  final List<NewsModel> news;
+  const PopulerNewsListView({super.key, required this.news});
 
   @override
   Widget build(BuildContext context) {
-    var newsCubit = NewCubit.get(context);
-    return Expanded(
-      child: ListView.builder(
-        physics: const NeverScrollableScrollPhysics(),
-        itemCount: newsCubit.articles.length,
-        itemBuilder: (context, index) {
-          return CustomeNewsItem(
-            newsModel: newsCubit.articles[index],
-          );
-        },
-      ),
+    return ListView.builder(
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: news.length,
+      itemBuilder: (context, index) {
+        return CustomeNewsItem(
+          newsModel: news[index],
+        );
+      },
     );
   }
 }

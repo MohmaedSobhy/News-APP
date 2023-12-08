@@ -1,18 +1,18 @@
 import 'package:news_app/Feature/home/data/model/news_model.dart';
 
-abstract class NewsState {}
+abstract class PopulerNewsState {}
 
-class InitialState extends NewsState {}
+class InitialState extends PopulerNewsState {}
 
-class FetchNewsLoading extends NewsState {}
+class FetchPopulerNewsLoading extends PopulerNewsState {}
 
-class FetchNewsSucess extends NewsState {
+class FetchPopulerNewsSucess extends PopulerNewsState {
   final List<NewsModel> news;
-  FetchNewsSucess({required this.news});
+  FetchPopulerNewsSucess({required this.news});
 }
 
-class FetchNewsFailed extends NewsState {
+class FetchPopulerNewsFailed extends PopulerNewsState {
   final String errorMessage;
 
-  FetchNewsFailed({required this.errorMessage});
+  FetchPopulerNewsFailed({required this.errorMessage});
 }
