@@ -1,6 +1,4 @@
-import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:meta/meta.dart';
 import 'package:news_app/Feature/home/data/model/news_model.dart';
 import 'package:news_app/Feature/home/data/repository/home_repository_implmentation.dart';
 

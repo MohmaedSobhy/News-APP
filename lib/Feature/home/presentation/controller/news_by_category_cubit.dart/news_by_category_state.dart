@@ -1,6 +1,5 @@
 part of 'news_by_category_cubit.dart';
 
-@immutable
 sealed class NewsByCategoryState {}
 
 class NewsByCategoryInitial extends NewsByCategoryState {}
