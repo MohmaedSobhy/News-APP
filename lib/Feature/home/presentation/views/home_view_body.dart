@@ -30,19 +30,28 @@ class HomeViewBody extends StatelessWidget {
             ),
           ),
         ),
-        SliverFillRemaining(
-          child: BlocBuilder<PopulerNewsCubit, PopulerNewsState>(
-            builder: (context, state) {
-              if (state is FetchPopulerNewsLoading) {
-                return const CustomeCircleLoading();
-              } else if (state is FetchPopulerNewsSucess) {
-                return Expanded(child: PopulerNewsListView(news: state.news));
-              }
-              return const CustomeCircleLoading();
-            },
-          ),
+        const SliverFillRemaining(
+          child: FetchPopulerNews(),
         ),
       ],
+    );
+  }
+}
+
+class FetchPopulerNews extends StatelessWidget {
+  const FetchPopulerNews({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<PopulerNewsCubit, PopulerNewsState>(
+      builder: (context, state) {
+        if (state is FetchPopulerNewsLoading) {
+          return const CustomeCircleLoading();
+        } else if (state is FetchPopulerNewsSucess) {
+          return Expanded(child: PopulerNewsListView(news: state.news));
+        }
+        return const CustomeCircleLoading();
+      },
     );
   }
 }
