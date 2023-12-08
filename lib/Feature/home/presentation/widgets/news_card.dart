@@ -17,13 +17,11 @@ class NewsCard extends StatelessWidget {
       child: InkWell(
         onTap: function,
         child: SizedBox(
-          width: double.infinity,
-          height: 30.h,
           child: Stack(
             alignment: AlignmentDirectional.bottomCenter,
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.circular(4),
+                borderRadius: BorderRadius.circular(10),
                 child: CachedNetworkImage(
                     imageUrl: articleModel.urlToImage,
                     imageBuilder: (context, imageProvider) {
@@ -43,8 +41,11 @@ class NewsCard extends StatelessWidget {
               Positioned(
                 child: Container(
                   width: double.infinity,
-                  color: Colors.black.withOpacity(0.5),
-                  height: 10.h,
+                  decoration: BoxDecoration(
+                    color: Colors.black.withOpacity(0.5),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  padding: const EdgeInsets.all(5),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -61,6 +62,7 @@ class NewsCard extends StatelessWidget {
                       Text(
                         articleModel.author,
                         maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.w900,

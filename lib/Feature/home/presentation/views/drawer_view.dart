@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/core/localization/app_string.dart';
+import 'package:news_app/core/routes/app_router.dart';
 import 'package:sizer/sizer.dart';
 
 class DrawerView extends StatelessWidget {
@@ -37,7 +39,10 @@ class DrawerView extends StatelessWidget {
                       color: Colors.black,
                     ),
                   ),
-                  onTap: () {},
+                  onTap: () {
+                    GoRouter.of(context).push(AppRouter.categoryScreen,
+                        extra: AppString.newsCategories[index]);
+                  },
                 ),
               );
             },

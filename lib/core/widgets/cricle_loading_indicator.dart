@@ -6,7 +6,9 @@ class CustomeCircleLoading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: CustomeCircleLoading(),
+      child: CircularProgressIndicator(
+        color: Colors.blueAccent,
+      ),
     );
   }
 }

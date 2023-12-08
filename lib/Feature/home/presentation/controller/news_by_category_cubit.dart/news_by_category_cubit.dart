@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:news_app/Feature/home/data/model/news_model.dart';
 import 'package:news_app/Feature/home/data/repository/home_repository_implmentation.dart';
@@ -7,6 +8,12 @@ part 'news_by_category_state.dart';
 
 class NewsByCategoryCubit extends Cubit<NewsByCategoryState> {
   NewsByCategoryCubit() : super(NewsByCategoryInitial());
+  static NewsByCategoryCubit? newsByCategoryCubit;
+
+  static NewsByCategoryCubit getInstanse() {
+    newsByCategoryCubit ??= NewsByCategoryCubit();
+    return newsByCategoryCubit!;
+  }
 
   void fetchNewsByCategory({required String category}) async {
     emit(FetchNewsByCategoryLoading());
@@ -15,8 +22,8 @@ class NewsByCategoryCubit extends Cubit<NewsByCategoryState> {
 
     result.fold((error) {
       emit(FetchNewsByCategoryFailed(errorMessage: error.errorMessage));
-    }, (news) {
-      emit(FetchNewsByCategorySucess(news: news));
+    }, (newsList) {
+      emit(FetchNewsByCategorySucess(news: newsList));
     });
   }
 }
