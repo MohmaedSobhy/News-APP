@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/core/routes/app_router.dart';
 import 'package:news_app/core/theme/app_theme.dart';
 import 'package:sizer/sizer.dart';
-
 import 'Feature/home/presentation/controller/populer_news_cubit/populer_news_cubit.dart';
 import 'core/theme/cubit/app_theme_cubit.dart';
 
