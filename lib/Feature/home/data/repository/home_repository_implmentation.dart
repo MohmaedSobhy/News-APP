@@ -9,6 +9,7 @@ import 'package:news_app/core/helper/check_article_data.dart';
 
 class HomeRepositoryImplmentation implements HomeRepository {
   static HomeRepositoryImplmentation? homeImplementation;
+
   HomeRepositoryImplmentation._privateConstructor();
 
   static HomeRepositoryImplmentation getInstanse() {

@@ -11,9 +11,9 @@ class IconThemeButton extends StatelessWidget {
       builder: (context, state) {
         return IconButton(
           onPressed: () {
-            AppThemeCubit.get(context).changeTheme();
+            AppThemeCubit.getInstanse().changeTheme();
           },
-          icon: Icon(AppThemeCubit.get(context).icon),
+          icon: Icon(AppThemeCubit.getInstanse().icon),
         );
       },
     );
