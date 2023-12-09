@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/core/localization/app_string.dart';
 import 'package:news_app/core/routes/app_router.dart';
-import 'package:sizer/sizer.dart';
 
 class DrawerView extends StatelessWidget {
   const DrawerView({super.key});
@@ -35,7 +34,7 @@ class DrawerView extends StatelessWidget {
                   title: Text(
                     AppString.newsCategories[index],
                     style: GoogleFonts.abyssinicaSil().copyWith(
-                      fontSize: 12.sp,
+                      fontSize: 12,
                       color: Colors.black,
                     ),
                   ),

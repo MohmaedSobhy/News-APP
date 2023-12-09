@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/core/utils/constanstent.dart';
-import 'package:sizer/sizer.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class ArticlePage extends StatelessWidget {
@@ -19,14 +18,14 @@ class ArticlePage extends StatelessWidget {
                 "Flutter",
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 12.sp,
+                  fontSize: 12,
                 ),
               ),
               Text(
                 ConstantString.title,
                 style: TextStyle(
                   color: Colors.blue,
-                  fontSize: 15.sp,
+                  fontSize: 15,
                 ),
               ),
             ]),

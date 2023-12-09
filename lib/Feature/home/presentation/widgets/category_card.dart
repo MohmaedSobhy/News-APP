@@ -22,12 +22,16 @@ class CategoryCard extends StatelessWidget {
                 imageUrl: categoryModel.imageUrl,
                 errorWidget: (context, url, error) {
                   return const Center(
-                    child: CircularProgressIndicator(),
+                    child: CircularProgressIndicator(
+                      color: Colors.blue,
+                    ),
                   );
                 },
                 placeholder: (context, url) {
                   return const Center(
-                    child: CircularProgressIndicator(),
+                    child: CircularProgressIndicator(
+                      color: Colors.blue,
+                    ),
                   );
                 },
                 fit: BoxFit.cover,
