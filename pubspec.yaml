@@ -28,7 +28,8 @@ dev_dependencies:
 flutter_icons:
   android: true
   ios: true
-  image_path: "images/news_logo.png"
+  image_path: "images/app_icon.png"
+  generate: true
 
 flutter:
 
