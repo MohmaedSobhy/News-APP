@@ -7,33 +7,16 @@ class ShimmerNewsCategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
-      baseColor: Colors.grey.shade300,
-      highlightColor: Colors.grey.shade200,
+      baseColor: Colors.grey.shade400,
+      highlightColor: Colors.grey.shade300,
       child: SizedBox(
         width: double.infinity,
         height: MediaQuery.sizeOf(context).height * 0.28,
-        child: Stack(
-          alignment: AlignmentDirectional.bottomCenter,
-          children: [
-            const ClipRRect(
-              borderRadius: BorderRadius.all(Radius.circular(8)),
-              child: SizedBox(),
-            ),
-            Positioned(
-              child: Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.black.withOpacity(0.5),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                padding: const EdgeInsets.all(5),
-                child: const Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [],
-                ),
-              ),
-            ),
-          ],
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.black.withOpacity(0.9),
+            borderRadius: BorderRadius.circular(9),
+          ),
         ),
       ),
     );
