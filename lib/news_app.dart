@@ -11,28 +11,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-        providers: [
-          BlocProvider(
-            create: (context) => PopulerNewsCubit()..getAllNews(),
-          ),
-          BlocProvider(
-            create: (context) => AppThemeCubit.getInstanse()..getCurrentTheme(),
-          ),
-        ],
-        child: FutureBuilder(
-            future: AppThemeCubit.getInstanse().getCurrentTheme(),
-            builder: (context, snapShot) {
-              return BlocBuilder<AppThemeCubit, AppThemeState>(
-                builder: (context, state) {
-                  return MaterialApp.router(
-                    routerConfig: AppRouter.router,
-                    debugShowCheckedModeBanner: false,
-                    theme: AppThemeCubit.getInstanse().isLight
-                        ? AppTheme.ligthTheme
-                        : AppTheme.dartTheme,
-                  );
-                },
-              );
-            },),);
+      providers: [
+        BlocProvider(
+          create: (context) => PopulerNewsCubit()..getAllNews(),
+        ),
+        BlocProvider(
+          create: (context) => AppThemeCubit.getInstanse()..getCurrentTheme(),
+        ),
+      ],
+      child: BlocBuilder<AppThemeCubit, AppThemeState>(
+        builder: (context, state) {
+          return MaterialApp.router(
+            routerConfig: AppRouter.router,
+            debugShowCheckedModeBanner: false,
+            theme: (state is LigthThemeState)
+                ? AppTheme.ligthTheme
+                : AppTheme.dartTheme,
+          );
+        },
+      ),
+    );
   }
 }

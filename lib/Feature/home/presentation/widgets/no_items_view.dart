@@ -6,11 +6,14 @@ class NoItemsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Text(
         ConstantString.noNews,
         style: TextStyle(
-            color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+          fontSize: 20,
+        ),
       ),
     );
   }

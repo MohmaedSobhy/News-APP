@@ -5,6 +5,7 @@ import 'package:news_app/Feature/home/presentation/controller/news_by_category_c
 import 'package:news_app/Feature/home/presentation/views/custome_title_app_bar.dart';
 import 'package:news_app/Feature/home/presentation/views/fetch_all_news_by_category_sucess.dart';
 import 'package:news_app/core/widgets/cricle_loading_indicator.dart';
+import 'package:news_app/core/widgets/no_news_forCategory.dart';
 
 class CategoryScreen extends StatelessWidget {
   final String category;
@@ -34,6 +35,9 @@ class CategoryScreen extends StatelessWidget {
               if (state is FetchNewsByCategoryLoading) {
                 return const CustomeCircleLoading();
               } else if (state is FetchNewsByCategorySucess) {
+                if (state.news.isEmpty) {
+                  return NoNewsForCategoryViews();
+                }
                 return FetchAllnewsByCategorySucess(news: state.news);
               }
               return Text("Hello $category");

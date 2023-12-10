@@ -22,6 +22,11 @@ class AppThemeCubit extends Cubit<AppThemeState> {
     await CacheHelper.checkIfKeyExists(CacheHelper.appThemeKey).then((exist) {
       if (exist) {
         isLight = CacheHelper.get(key: CacheHelper.appThemeKey);
+        if (isLight) {
+          emit(LigthThemeState());
+        } else {
+          emit(DarkThemeState());
+        }
       }
     });
   }
@@ -30,10 +35,11 @@ class AppThemeCubit extends Cubit<AppThemeState> {
     isLight = !isLight;
     if (isLight) {
       icon = Icons.light_mode;
+      emit(LigthThemeState());
     } else {
       icon = Icons.dark_mode;
+      emit(DarkThemeState());
     }
     await CacheHelper.put(key: CacheHelper.appThemeKey, value: isLight);
-    emit(ChangeAppTheme());
   }
 }

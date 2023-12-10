@@ -5,4 +5,6 @@ sealed class AppThemeState {}
 
 class ThemeAppInitial extends AppThemeState {}
 
-class ChangeAppTheme extends AppThemeState {}
+class LigthThemeState extends AppThemeState {}
+
+class DarkThemeState extends AppThemeState {}
