@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 abstract class AppTheme {
   static ThemeData ligthTheme = ThemeData(
     scaffoldBackgroundColor: Colors.white,
-    cardColor: Colors.white,
     textTheme: GoogleFonts.poppinsTextTheme().copyWith(
       displayLarge: GoogleFonts.abrilFatface().copyWith(
         color: Colors.black,
@@ -28,7 +27,6 @@ abstract class AppTheme {
 
   static ThemeData dartTheme = ThemeData(
     scaffoldBackgroundColor: Colors.black,
-    cardColor: Colors.white,
     drawerTheme: const DrawerThemeData(
       backgroundColor: Colors.black,
     ),

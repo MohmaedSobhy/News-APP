@@ -12,8 +12,11 @@ class PopulerNewsListView extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       itemCount: news.length,
       itemBuilder: (context, index) {
-        return CustomeNewsItem(
-          newsModel: news[index],
+        return Padding(
+          padding: const EdgeInsets.only(top: 10),
+          child: CustomePopulerNewsItem(
+            newsModel: news[index],
+          ),
         );
       },
     );

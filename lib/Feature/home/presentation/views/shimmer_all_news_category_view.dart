@@ -11,7 +11,7 @@ class ShimmerNewsByCategoryView extends StatelessWidget {
       itemBuilder: (context, index) {
         return Padding(
           padding: EdgeInsets.symmetric(
-            vertical: 20,
+            vertical: 10,
             horizontal: MediaQuery.sizeOf(context).width * 0.02,
           ),
           child: const ShimmerNewsCategoryCard(),

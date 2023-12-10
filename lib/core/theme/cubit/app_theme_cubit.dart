@@ -19,7 +19,8 @@ class AppThemeCubit extends Cubit<AppThemeState> {
   IconData icon = Icons.light_mode;
 
   Future<void> getCurrentTheme() async {
-    await CacheHelper.checkIfKeyExists(CacheHelper.appThemeKey).then((exist) {
+    await CacheHelper.checkIfKeyExists(CacheHelper.appThemeKey)
+        .then((exist) async {
       if (exist) {
         isLight = CacheHelper.get(key: CacheHelper.appThemeKey);
         if (isLight) {
@@ -27,6 +28,9 @@ class AppThemeCubit extends Cubit<AppThemeState> {
         } else {
           emit(DarkThemeState());
         }
+      } else {
+        await CacheHelper.put(key: CacheHelper.appThemeKey, value: isLight);
+        emit(LigthThemeState());
       }
     });
   }
