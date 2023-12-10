@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../../core/routes/app_router.dart';
 import '../../data/model/news_model.dart';
 import '../widgets/news_category_card.dart';
 
@@ -12,7 +14,14 @@ class FetchAllnewsByCategorySucess extends StatelessWidget {
     return ListView.builder(
       itemCount: news.length,
       itemBuilder: (context, index) {
-        return NewsCategoryCard(articleModel: news[index], function: () {});
+        return NewsCategoryCard(
+            articleModel: news[index],
+            function: () {
+              GoRouter.of(context).push(
+                AppRouter.newsDetailes,
+                extra: news[index].articleUrl,
+              );
+            });
       },
     );
   }
