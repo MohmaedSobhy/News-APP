@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:news_app/Feature/home/data/model/category_model.dart';
 
 // ignore: must_be_immutable
-class CategoryCard extends StatelessWidget {
+class ImageSliderCard extends StatelessWidget {
   CategoryModel categoryModel;
 
-  CategoryCard({super.key, required this.categoryModel});
+  ImageSliderCard({super.key, required this.categoryModel});
 
   @override
   Widget build(BuildContext context) {
