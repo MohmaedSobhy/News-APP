@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../data/model/news_model.dart';
-import '../widgets/news_card.dart';
+import '../widgets/news_category_card.dart';
 
 class FetchAllnewsByCategorySucess extends StatelessWidget {
   final List<NewsModel> news;
@@ -12,7 +12,7 @@ class FetchAllnewsByCategorySucess extends StatelessWidget {
     return ListView.builder(
       itemCount: news.length,
       itemBuilder: (context, index) {
-        return NewsCard(articleModel: news[index], function: () {});
+        return NewsCategoryCard(articleModel: news[index], function: () {});
       },
     );
   }

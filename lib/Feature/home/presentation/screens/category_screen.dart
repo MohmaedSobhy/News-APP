@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:news_app/Feature/home/presentation/controller/news_by_category_cubit.dart/news_by_category_cubit.dart';
 import 'package:news_app/Feature/home/presentation/views/custome_title_app_bar.dart';
 import 'package:news_app/Feature/home/presentation/views/fetch_all_news_by_category_sucess.dart';
-import 'package:news_app/core/widgets/cricle_loading_indicator.dart';
+import 'package:news_app/Feature/home/presentation/views/shimmer_all_news_category_view.dart';
 import 'package:news_app/core/widgets/no_news_forCategory.dart';
 
 class CategoryScreen extends StatelessWidget {
@@ -33,7 +33,7 @@ class CategoryScreen extends StatelessWidget {
         body: BlocBuilder<NewsByCategoryCubit, NewsByCategoryState>(
           builder: (context, state) {
             if (state is FetchNewsByCategoryLoading) {
-              return const CustomeCircleLoading();
+              return const ShimmerNewsByCategoryView();
             } else if (state is FetchNewsByCategorySucess) {
               if (state.news.isEmpty) {
                 return const NoNewsForThisCategoryViews();
