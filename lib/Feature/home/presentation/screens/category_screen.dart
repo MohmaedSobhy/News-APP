@@ -17,32 +17,33 @@ class CategoryScreen extends StatelessWidget {
       value: NewsByCategoryCubit.getInstanse()
         ..fetchNewsByCategory(category: category),
       child: Scaffold(
-          appBar: AppBar(
-            leading: IconButton(
-              onPressed: () {
-                GoRouter.of(context).pop();
-              },
-              icon: const Icon(
-                Icons.arrow_back,
-              ),
-            ),
-            title: CustomeTitleAppBarView(
-              title: category,
+        appBar: AppBar(
+          leading: IconButton(
+            onPressed: () {
+              GoRouter.of(context).pop();
+            },
+            icon: const Icon(
+              Icons.arrow_back,
             ),
           ),
-          body: BlocBuilder<NewsByCategoryCubit, NewsByCategoryState>(
-            builder: (context, state) {
-              if (state is FetchNewsByCategoryLoading) {
-                return const CustomeCircleLoading();
-              } else if (state is FetchNewsByCategorySucess) {
-                if (state.news.isEmpty) {
-                  return const NoNewsForThisCategoryViews();
-                }
-                return FetchAllnewsByCategorySucess(news: state.news);
+          title: CustomeTitleAppBarView(
+            title: category,
+          ),
+        ),
+        body: BlocBuilder<NewsByCategoryCubit, NewsByCategoryState>(
+          builder: (context, state) {
+            if (state is FetchNewsByCategoryLoading) {
+              return const CustomeCircleLoading();
+            } else if (state is FetchNewsByCategorySucess) {
+              if (state.news.isEmpty) {
+                return const NoNewsForThisCategoryViews();
               }
-              return Text("Hello $category");
-            },
-          )),
+              return FetchAllnewsByCategorySucess(news: state.news);
+            }
+            return Text("Hello $category");
+          },
+        ),
+      ),
     );
   }
 }

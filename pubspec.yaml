@@ -19,6 +19,7 @@ dependencies:
   google_fonts: ^6.1.0
   http: null
   shared_preferences: ^2.2.2
+  shimmer: ^3.0.0
   svg_flutter: ^0.0.1
   webview_flutter: null
 
