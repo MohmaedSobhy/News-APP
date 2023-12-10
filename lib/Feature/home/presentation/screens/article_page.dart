@@ -10,7 +10,7 @@ class ArticlePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Row(
+        title: const Row(
             textBaseline: TextBaseline.alphabetic,
             mainAxisSize: MainAxisSize.min,
             children: [

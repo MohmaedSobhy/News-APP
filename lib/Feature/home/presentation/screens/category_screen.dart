@@ -36,7 +36,7 @@ class CategoryScreen extends StatelessWidget {
                 return const CustomeCircleLoading();
               } else if (state is FetchNewsByCategorySucess) {
                 if (state.news.isEmpty) {
-                  return NoNewsForCategoryViews();
+                  return const NoNewsForThisCategoryViews();
                 }
                 return FetchAllnewsByCategorySucess(news: state.news);
               }
