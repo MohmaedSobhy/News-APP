@@ -4,10 +4,8 @@ abstract class AppString {
   static String ligthMode = "Light Mode";
   static List<String> newsCategories = [
     'Sports',
-    'Economy',
     'Health',
     'Business',
     'Science',
-    'Entertaniment'
   ];
 }

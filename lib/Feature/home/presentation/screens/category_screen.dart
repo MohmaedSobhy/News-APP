@@ -8,7 +8,6 @@ import 'package:news_app/Feature/home/presentation/views/fetch_all_news_by_categ
 import 'package:news_app/Feature/home/presentation/views/shimmer_all_news_category_view.dart';
 import 'package:news_app/core/widgets/fauiler_widget.dart';
 import 'package:news_app/core/widgets/no_internet_conncetion.dart';
-import 'package:news_app/core/widgets/no_news_forCategory.dart';
 
 class CategoryScreen extends StatelessWidget {
   final String category;
@@ -55,9 +54,6 @@ class CategoryBodyScreen extends StatelessWidget {
     return BlocBuilder<NewsByCategoryCubit, NewsByCategoryState>(
       builder: (context, state) {
         if (state is FetchNewsByCategorySucess) {
-          if (state.news.isEmpty) {
-            return const NoNewsForThisCategoryViews();
-          }
           return FetchAllnewsByCategorySucess(news: state.news);
         } else if (state is FetchNewsByCategoryFailed) {
           return CustomeFauilerWidget(errorMessage: state.errorMessage);
